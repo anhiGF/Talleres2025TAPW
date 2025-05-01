@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStored con express</title>
+</head>
+<body>
+    <h1>ejemplo de SessionStored</h1>
+    <div>
+        <label for="username">Nombre de usuario: </label>
+        <input type="text" id="username"/>
+        <button onclick="saveUsername()">Guardar en SessionStored</button>
+    </div>
+
+    <div>
+        <button onclick="loadUsername()">Cargar nombre de usuario desde SessionStored</button>
+        <p id="username-display"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
