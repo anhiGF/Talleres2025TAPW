@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Cache API</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Prueba de Cache API</h1>
+    <p>Esta página puede funcionar sin conexión gracias al Service Worker</p>
+    <button id="clearCache">Clear Cache</button>
+    <script src="/main.js"></script>
+    <script>
+        // Registrar Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registrado con éxito:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Error al registrar ServiceWorker:', error);
+                    });
+            });
+        }
+
+        // Botón para limpiar caché
+        document.getElementById('clearCache').addEventListener('click', () => {
+            caches.keys().then(cacheNames => {
+                cacheNames.forEach(cacheName => {
+                    caches.delete(cacheName);
+                });
+                alert('Cache borrado. Recarga la página para ver los cambios.');
+            });
+        });
+    </script>
+</body>
+</html>

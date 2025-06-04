@@ -2,29 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=f, initial-scale=1.0">
-    <title>indexeddb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB - Libreta de Contactos</title>
 </head>
 <body>
-    <h2>Agregar contacto</h2>
-<form id="formulario">
-  <input type="text" id="nombre" placeholder="Nombre" required>
-  <input type="text" id="id" placeholder="ID" required>
-  <input type="number" id="edad" placeholder="Edad" required>
-  <input type="button" id="btn-guardar" value="Guardar">
-</form>
-
-<div class="botonedit"></div>
-
-<h2>Buscar contacto</h2>
-<form id="formulariobusqueda">
-  <input type="text" id="buscar-nombre" placeholder="Buscar por nombre">
-  <input type="submit" value="Buscar">
-</form>
-
-<div class="resultadobusqueda"></div>
-<div class="caja-contacto"></div>
-
-<script src="bd.js"></script>
+    <h1>Libreta de Contactos</h1>
+    
+    <form id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="id" placeholder="ID">
+        <input type="text" id="email" placeholder="Email">
+    </form>
+    
+    <div class="botonEdit">
+        <input type="button" id="botonGuardar" value="Guardar">
+    </div>
+    
+    <br>
+    
+    <form id="formularioBusqueda">
+        <input type="text" name="buscar" id="buscarNombre" placeholder="Buscar por nombre">
+        <input type="submit" value="Buscar" id="botonBuscar">
+    </form>
+    
+    <div class="resultadoBusqueda"></div>
+    <br>
+    <div class="cajacontacto"></div>
+    
+    <script src="bd.js"></script>
 </body>
 </html>
